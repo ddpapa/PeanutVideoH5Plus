@@ -1,0 +1,99 @@
+.mui-content{
+	width: 100vw;
+	height: 100vh;
+	padding: 0rem !important;
+}
+.swiper-container{
+	background-color: #000000;
+}
+
+.swiper-wrapper{
+	width: 100vw;
+	height: 100vh;
+}
+
+.swiper-slide{
+	display: flex;
+	align-items: flex-end;
+}
+
+.swiper-video{
+	height: 100vh;
+}
+
+.swiper-slide>div{
+	position: absolute;
+	bottom: 0.625rem;
+	width: 100vw;
+	height: 40vh;
+	padding: 0 10px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	color: white;
+	text-shadow: 0.0625rem 0.0625rem 0.3125rem rgba(46, 46, 46, 0.5);
+}
+
+.myself-left-info{
+	width: 15.625rem;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-end;
+}
+
+.myself-right-btn{
+	width: 3rem;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+
+
+.video-desc{
+	font-size: 0.9375rem;
+	line-height: 1.25rem;
+	padding: 0.3125rem 0;
+}
+
+.video-bgm{
+	font-size: 0.9375rem;
+}
+
+.author-avatar{
+}
+
+.author-avatar>img{
+	width: 3rem;
+	height: 3rem;
+	border-radius: 50%;
+	position: relative;
+	z-index: 10;
+	border: 0.0625rem white solid;
+}
+
+.author-avatar>div{
+	width: 1.8rem;
+	height: 0.9375rem;
+	border-radius: 0.9rem;
+	margin: auto;
+	margin-top: -0.9375rem;
+	position: relative;
+	z-index: 11;
+	background-image: linear-gradient(to bottom right, #ff6d00, #fe1437);
+}
+
+.user-action{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-size: 0.9375rem;
+}
+
+.user-action :nth-child(1){
+	line-height: 2.5rem;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta http-equiv="Access-Control-Allow-Origin" content="*">
+		<link href="../fontsico/iconfont.css" rel="stylesheet" />
+		<link href="../css/mui.css" rel="stylesheet" />
+		<link href="../css/login.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">用户登录</h1>
+		</header>
+		<div class="main-content">
+			<img class="logo" src="../resource/logo.png"/>
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label><span class="iconfont iconshouji3"></span></label>
+					<input type="number" class="mui-input-clear custom-input" oninput="if(value.length>11)value=value.slice(0,11)" placeholder="请输入手机号">
+				</div>
+				<div id="code" class="mui-input-row">
+					<label><span class="iconfont iconyanzhengma"></span></label>
+					<div class="code-input">
+						<input type="number" class="mui-input-clear" oninput="if(value.length>6)value=value.slice(0,6)" value="" placeholder="短信验证码">
+					</div>
+					<button type="button" class="code-btn">获取</button>
+				</div>
+				<div id="pwd" class="mui-input-row" style="display: none;">
+					<label><span class="iconfont iconmima"></span></label>
+					<input type="password" class="mui-input-password custom-input" maxlength="30" value="" placeholder="请输入密码">
+				</div>
+			</form>
+			<div class="ways-change">
+				<span class="ways-text">密码登录</span>
+			</div>
+			<button type="button" class="mui-btn mui-btn-royal me-btn" data-loading-icon="mui-spinner mui-spinner-custom" data-loading-text="登录中">登&emsp;录</button> 
+			<span class="login-tips">登录即代表同意《用户协议》和隐私政策</span>
+		</div>
+		<div class="other-ways">
+			<img src="resource/icon-qq.png" />
+			<img src="resource/icon-wechat.png" />
+		</div>
+		<script src="../js/mui.js"></script>
+		<script src="../js/base.js"></script>
+		<script src="../js/login.js"></script>
+	</body>
+
+</html>
