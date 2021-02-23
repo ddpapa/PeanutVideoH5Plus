@@ -1,6 +1,13 @@
 body{
 	background: transparent;
 }
+
+.mui-content{
+	width: 100vw;
+	height: 100vh;
+	padding: 0rem !important;
+}
+
 /* 导航栏样式 */
 .myself-bar{
 	display: flex;
@@ -9,7 +16,6 @@ body{
 	justify-content: space-between;
 	background: transparent;
 	color: white;
-	font-weight: bold;
 	-webkit-box-shadow: none;
 	box-shadow: none;
 	padding-left: 1.25rem;
@@ -26,6 +32,31 @@ body{
 	flex-direction: row;
 	justify-content: space-around;
 }
+
 .myself-active-nav{
 	font-weight: bold;
+}
+
+/* 导航栏文字颜色动态切换 */
+.myself-nagetive-nav-white{
+	color: #eaeae8;
+}
+
+.myself-active-nav-white{
+	color: white;
+}
+
+.myself-nagetive-nav-black{
+	color: #c6c6c6;
+}
+
+.myself-active-nav-black{
+	color: black;
+}
+
+/* outerswiper样式 */
+#outer-swiper{
+	width: 100vw;
+	height: 100vh;
+	background-color: white;
 }

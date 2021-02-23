@@ -1,27 +1,24 @@
-.mui-content{
-	width: 100vw;
-	height: 100vh;
-	padding: 0rem !important;
-}
-.swiper-container{
+#inner-swiper{
 	background-color: #000000;
-}
-
-.swiper-wrapper{
 	width: 100vw;
 	height: 100vh;
 }
 
-.swiper-slide{
+#inner-swiper .swiper-wrapper{
+	width: 100vw;
+	height: 100vh;
+}
+
+#inner-swiper .swiper-slide{
 	display: flex;
 	align-items: flex-end;
 }
 
-.swiper-video{
+#inner-swiper .swiper-video{
 	height: 100vh;
 }
 
-.swiper-slide>div{
+#inner-swiper .swiper-slide>div{
 	position: absolute;
 	bottom: 0.625rem;
 	width: 100vw;

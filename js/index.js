@@ -1,79 +1,66 @@
 mui.init();
-//定义subpages数组，添加子页面
-var subpages = [{
-			      url:'./subpages/attention.html',
-			      id:'attention.html',
-			      styles:{
-			        bottom:'0px'//默认为0px，可不定义；
-			      }
-			    },{
-			      url:'./subpages/location.html',
-			      id:'location.html',
-			      styles:{
-			        bottom:'0px'//默认为0px，可不定义；
-			      }
-			    }];
-var aniShow={}	//记录显示过的页面
-var statusHeight=0;	//状态栏高度
+
 
 mui.plusReady(function () {
-	var self = plus.webview.currentWebview();
-	statusHeight = plus.navigator.getStatusbarHeight();
-	mui(".myself-bar")[0].style.top=statusHeight+"px";
-    for(var i = 0; i < subpages.length; i++){
-		var temp = {};
-		var sub = plus.webview.create(subpages[i].url,subpages[i].id,{top:statusHeight+45+'px', bottom:'0px'});
-		sub.hide();
-		self.append(sub);
-	}
+   const statusHeight = plus.navigator.getStatusbarHeight();
+   mui(".myself-bar")[0].style.top=statusHeight+"px";
+   plus.navigator.setStatusBarStyle("light");
+   mui('#location')[0].style.marginTop = 44+statusHeight+'px';
+   mui('#attention')[0].style.marginTop = 44+statusHeight+'px';
 })
 
-activeTab = "interest.html";
-
-// 切换导航栏操作
-mui(".myself-center-bar").on("tap","span",function(e){
-	// 判断是否是当前页面
-	var targetTab = this.getAttribute('href');
+var outerSwiper = new Swiper ('#outer-swiper', {
+	initialSlide:2,	// 设定初始化索引，即第三个slider
+    direction: 'horizontal', // 垂直切换选项
+    resistanceRatio:0, // 边缘抵抗力为0
+  });
+    
+outerSwiper.on('slideChangeTransitionEnd',function(){
+	const currentVideo = mui('video')[innerSwiper.activeIndex];
+	const previousTab = mui('.myself-center-bar>span')[this.previousIndex];
+	const currentTab = mui('.myself-center-bar>span')[this.activeIndex];
 	
-	if(targetTab === activeTab){
-		return;
-	}
-	
-	var activeNav = mui("span.myself-active-nav")[0];
-	activeNav.setAttribute("class","");
-	var targetNav = mui(this)[0];
-	targetNav.setAttribute("class","myself-active-nav");
-	const activeVideo = mui('video')[mySwiper.activeIndex];
-	
-	if(targetTab !== "interest.html"){
-		// 如果推荐页的视频仍在播放，则暂停
-		if(!activeVideo.paused){
-			activeVideo.pause();
-		}
-		mui(".mui-content")[0].style.visibility="hidden";
-		mui(".myself-bar")[0].style.backgroundColor="white";
-		mui(".myself-bar")[0].style.color="black"; 
-		plus.navigator.setStatusBarStyle("dark");
-		// 判断页面是不是首次显示
-		if(mui.os.ios || aniShow[targetTab]){
-			plus.webview.show(targetTab);
-		}else{
-			// 否则来个动画缓冲
-			var temp = {};
-			temp[targetTab] = "true";
-			mui.extend(aniShow,temp);
-			plus.webview.show(targetTab,"fade-in",300);
-		}
-	}else{
-		if(activeVideo.paused){
-			activeVideo.play();
-		}
-		mui(".mui-content")[0].style.visibility="visible";
-		mui(".myself-bar")[0].style.background="transparent";
-		mui(".myself-bar")[0].style.color="white";
+	if(this.activeIndex === 2){
 		plus.navigator.setStatusBarStyle("light");
+		mui('.myself-bar')[0].style.color = '#eaeae8';
+		previousTab.setAttribute('class','myself-nagetive-nav-white');
+		currentTab.setAttribute('class','myself-active-nav myself-active-nav-white');
+		currentVideo.play();
+	}else{
+		plus.navigator.setStatusBarStyle("dark");
+		mui('.myself-bar')[0].style.color = 'black';
+		previousTab.setAttribute('class','myself-nagetive-nav-black');
+		currentTab.setAttribute('class','myself-active-nav myself-active-nav-black');
+		if(!currentVideo.paused){
+			currentVideo.pause();
+		}
 	}
-		
-	plus.webview.hide(activeTab);
-	activeTab = targetTab;
 });
+
+// 导航栏点击事件
+mui('.myself-center-bar').on('tap','span',function(){
+	const targetSlider = mui(this)[0].getAttribute('href');
+	const index = outerSwiper.activeIndex;
+	switch(targetSlider){
+		case 'slider1':{
+			if(index === 2){
+				outerSwiper.slideTo(0, 50, true);
+			}else if(index === 1)(
+				outerSwiper.slideTo(0, 130, true)
+			)
+		};break;
+		case 'slider2':{
+			if(index != 1){
+				outerSwiper.slideTo(1, 130, true);
+			}
+		};break;
+		case 'slider3':{
+			if(index === 0){
+				outerSwiper.slideTo(2, 50, true);
+			}else if(index === 1)(
+				outerSwiper.slideTo(2, 130, true)
+			)
+		};break;
+	}
+})
+  
