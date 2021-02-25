@@ -2,160 +2,131 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <title></title>
 	<link href="../fontsico/iconfont.css" rel="stylesheet" />
 	<link href="../css/swiper/swiper-bundle.css" rel="stylesheet" />
     <link href="../css/mui.css" rel="stylesheet"/>
 	<link href="../css/index.css" rel="stylesheet"/>
+	<link href="../css/tabpages/location.css" rel="stylesheet"/>
+	<link href="../css/tabpages/attention.css" rel="stylesheet"/>
 	<link href="../css/tabpages/interest.css" rel="stylesheet" />
 </head>
 <body>
-	<header class="mui-bar mui-bar-nav myself-bar">
-		<span class="iconfont iconliebiao"></span>
-		<div class="myself-center-bar">
-			<span href="slider1">同城</span>
-			<span href="slider2">关注</span>
-			<span class="myself-active-nav" href="slider3">推荐</span>
-		</div>
-		<span class="iconfont iconsousuo"></span>
-	</header>
-	<div class="mui-content">
-		<div class="swiper-container" id="outer-swiper">
-			<div class="swiper-wrapper">
-			    <div class="swiper-slide">
-					<div id="location" style="background-color: greenyellow; width: 100vw; height: 100%;">
-						
-					</div>
-				</div>
-			    <div class="swiper-slide">
-					<div id="attention" style="background-color: palegreen; width: 100vw; height: 100%;">
-						
-					</div>
-				</div>
-			    <div class="swiper-slide">
-					<!-- interest 导航页 -->
-					<div class="swiper-container" id="inner-swiper">
-					    <div class="swiper-wrapper">
-					        <div class="swiper-slide">
-								<video class="swiper-video" autoplay="autoplay" loop="loop">
-									<source src="../resource/videos/1.mp4" type="video/mp4"></source>
-									Your browser does not support the video tag.
-								</video>
+	<!-- 侧滑导航根容器 -->
+	<div class="mui-off-canvas-wrap mui-draggable">
+	  <!-- 主页面容器 -->
+	  <div class="mui-inner-wrap">
+	     <!-- 菜单容器 -->
+	    <aside class="mui-off-canvas-left">
+	      <div class="mui-scroll-wrapper">
+	        <div class="mui-scroll">
+	          <!-- 菜单具体展示内容 -->
+	          ...
+	        </div>
+	      </div>
+	    </aside>
+	    <!-- 主页面标题 -->
+	    <header class="mui-bar mui-bar-nav myself-bar">
+	    	<span class="iconfont iconliebiao"></span>
+	    	<div class="myself-center-bar">
+	    		<span href="slider1">同城</span>
+	    		<span href="slider2">关注</span>
+	    		<span class="myself-active-nav" href="slider3">推荐</span>
+	    	</div>
+	    	<span class="iconfont iconsousuo"></span>
+	    </header>
+	    <div class="mui-content">
+	    	<div class="swiper-container" id="outer-swiper">
+	    		<div class="swiper-wrapper">
+	    		    <div class="swiper-slide">
+						<div id="location">
+							<div class="video-cover" style="background-image: url(../resource/images/1.png);">
 								<div>
-									<div class="myself-left-info">
-										<div class="author-name">
-											<b>@<span>呆呆papa</span></b>
-										</div>
-										<div class="video-desc">
-											如果青春的时光在闲散中度过，那么回忆岁月将是一场凄凉的悲剧。
-										</div>
-										<div class="video-bgm">
-											<span class="iconfont iconyinle"></span>&nbsp;呆呆papa的原声作品
-										</div>
-									</div>
-									<div class="myself-right-btn">
-										<div class="author-avatar">
-											<img src="../resource/images/avatar.jpg" />
-											<div></div>
-										</div>
-										<div class="user-action">
-											<span class="iconfont iconshoucang"></span>
-											<span>点赞</span>
-										</div>
-										<div class="user-action">
-											<span class="iconfont iconpinglun"></span>
-											<span>评论</span>
-										</div>
-										<div class="user-action">
-											<span class="iconfont iconfenxiang"></span>
-											<span>分享</span>
-										</div>
-									</div>
+									<span class="iconfont iconxihuan"></span>
+									<span> 4.1w</span>
 								</div>
 							</div>
-							<div class="swiper-slide">
-								<video class="swiper-video" loop="loop">
-									<source src="../resource/videos/2.mp4" type="video/mp4"></source>
-									Your browser does not support the video tag.
-								</video>
+							<div class="video-cover" style="background-image: url(../resource/images/1.png);">
 								<div>
-									<div class="myself-left-info">
-										<div class="author-name">
-											<b>@<span>呆呆papa</span></b>
-										</div>
-										<div class="video-desc">
-											如果青春的时光在闲散中度过，那么回忆岁月将是一场凄凉的悲剧。
-										</div>
-										<div class="video-bgm">
-											<span class="iconfont iconyinle"></span>&nbsp;呆呆papa的原声作品
-										</div>
-									</div>
-									<div class="myself-right-btn">
-										<div class="author-avatar">
-											<img src="../resource/images/avatar.jpg" />
-											<div></div>
-										</div>
-										<div class="user-action">
-											<span class="iconfont iconshoucang"></span>
-											<span>点赞</span>
-										</div>
-										<div class="user-action">
-											<span class="iconfont iconpinglun"></span>
-											<span>评论</span>
-										</div>
-										<div class="user-action">
-											<span class="iconfont iconfenxiang"></span>
-											<span>分享</span>
-										</div>
-									</div>
+									<span class="iconfont iconxihuan"></span>
+									<span> 4.1w</span>
 								</div>
 							</div>
-							<div class="swiper-slide">
-								<video class="swiper-video" loop="loop">
-									<source src="../../resource/videos/1.mp4" type="video/mp4"></source>
-									Your browser does not support the video tag.
-								</video>
+							<div class="video-cover" style="background-image: url(../resource/images/1.png);">
 								<div>
-									<div class="myself-left-info">
-										<div class="author-name">
-											<b>@<span>呆呆papa</span></b>
-										</div>
-										<div class="video-desc">
-											如果青春的时光在闲散中度过，那么回忆岁月将是一场凄凉的悲剧。
-										</div>
-										<div class="video-bgm">
-											<span class="iconfont iconyinle"></span>&nbsp;呆呆papa的原声作品
-										</div>
-									</div>
-									<div class="myself-right-btn">
-										<div class="author-avatar">
-											<img src="../resource/images/avatar.jpg" />
-											<div></div>
-										</div>
-										<div class="user-action">
-											<span class="iconfont iconshoucang"></span>
-											<span>点赞</span>
-										</div>
-										<div class="user-action">
-											<span class="iconfont iconpinglun"></span>
-											<span>评论</span>
-										</div>
-										<div class="user-action">
-											<span class="iconfont iconfenxiang"></span>
-											<span>分享</span>
-										</div>
-									</div>
+									<span class="iconfont iconxihuan"></span>
+									<span> 4.1w</span>
 								</div>
 							</div>
-					    </div>
-					</div>
-				</div>
-			  </div>
-		</div>
+							<div class="video-cover" style="background-image: url(../resource/images/1.png);">
+								<div>
+									<span class="iconfont iconxihuan"></span>
+									<span> 4.1w</span>
+								</div>
+							</div>
+							<div class="video-cover" style="background-image: url(../resource/images/1.png);">
+								<div>
+									<span class="iconfont iconxihuan"></span>
+									<span> 4.1w</span>
+								</div>
+							</div>
+							<div class="video-cover" style="background-image: url(../resource/images/1.png);">
+								<div>
+									<span class="iconfont iconxihuan"></span>
+									<span> 4.1w</span>
+								</div>
+							</div>
+							<div class="video-cover" style="background-image: url(../resource/images/1.png);">
+								<div>
+									<span class="iconfont iconxihuan"></span>
+									<span> 4.1w</span>
+								</div>
+							</div>
+							<div class="video-cover" style="background-image: url(../resource/images/1.png);">
+								<div>
+									<span class="iconfont iconxihuan"></span>
+									<span> 4.1w</span>
+								</div>
+							</div>
+							<div class="video-cover" style="background-image: url(../resource/images/1.png);">
+								<div>
+									<span class="iconfont iconxihuan"></span>
+									<span> 4.1w</span>
+								</div>
+							</div>
+						</div>
+	    			</div>
+	    		    <div class="swiper-slide">
+	    				<!-- attention 导航页 -->
+	    				<div class="swiper-container" id="attention-swiper">
+	    				    <div class="swiper-wrapper"></div>
+	    				</div>
+	    			</div>
+	    		    <div class="swiper-slide">
+	    				<!-- interest 导航页 -->
+	    				<div class="swiper-container" id="interest-swiper">
+	    				    <div class="swiper-wrapper"></div>
+	    				</div>
+	    			</div>
+	    		  </div>
+	    	</div>
+	    </div>
+	    <header class="mui-bar mui-bar-nav myself-footer-bar">
+	    	<span href="index.html">首页</span>
+	    	<span href="friedns.html">朋友</span>
+	    	<span href="camera.html" class="iconfont iconpaishe"></span>
+	    	<span href="message.html">消息</span>
+	    	<span href="personal.html">我</span>
+	    </header>
+		<div class="my-mask"></div>
+	  </div>
 	</div>
 	<script src="../js/mui.js"></script>
 	<script src="../js/swiper/swiper-bundle.js"></script>
+	<script src="../js/base.js"></script>
+	<script src="../js/tabpages/location.js"></script>
+	<script src="../js/tabpages/attention.js"></script>
 	<script src="../js/tabpages/interest.js"></script>
 	<script src="../js/index.js"></script>
 </body>

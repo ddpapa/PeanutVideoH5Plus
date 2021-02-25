@@ -1,6 +1,6 @@
 mui.init();
 
-var data_interest = {
+var data_attention = {
 	videoList:[],		// 视频列表
 	newVideoList:[],	// 新查询到的视频列表
 	author:'',	//作者
@@ -11,26 +11,26 @@ var data_interest = {
 	page:1,		// 当前获取了第几页
 }
 
-var interestSwiper = new Swiper ('#interest-swiper', {
+var attentionSwiper = new Swiper ('#attention-swiper', {
     direction: 'vertical', // 垂直切换选项
     resistanceRatio:0, // 边缘抵抗力为0
   });
 
 
-interestSwiper.on('slideChangeTransitionEnd',function(){
-	const currentVideo = mui('#interest-swiper video')[this.activeIndex];
-	const prevVideo = mui('#interest-swiper video')[this.previousIndex];
+attentionSwiper.on('slideChangeTransitionEnd',function(){
+	const currentVideo = mui('#attention-swiper video')[this.activeIndex];
+	const prevVideo = mui('#attention-swiper video')[this.previousIndex];
 	setTimeout(function(){
 		prevVideo.pause();
 		currentVideo.play();
 	},50);
-	if(this.activeIndex === this.slides.length-1 && data_interest.page++ < data_interest.totalPage){
-		getInterestVideoList();
+	if(this.activeIndex === this.slides.length-1 && data_attention.page++ < data_attention.totalPage){
+		getVideoList();
 	}
 });
 
-interestSwiper.on('tap',function(){
-	var currentVideo = mui('#interest-swiper video')[this.activeIndex];
+attentionSwiper.on('tap',function(){
+	var currentVideo = mui('#attention-swiper video')[this.activeIndex];
 	if(currentVideo.paused){
 		// 如果视频处于暂停状态
 		setTimeout(function(){
@@ -43,18 +43,12 @@ interestSwiper.on('tap',function(){
 	}
 });
 
-
-// 页面数据初始化
-window.onload=(function(){
-	getInterestVideoList();
-})
-
-function getInterestVideoList(){
+function getAttentionVideoList(){
 	// 将异步代码同步执行：获去视频列表完成 => 自动播放第一个
 	var getVideoListPromise = new Promise(function(resolve, reject){
 		mui.ajax(baseURL+"video/showAll",{
 			data:{
-				page:data_interest.page,
+				page:data_attention.page,
 			},
 			dataType:'json',//服务器返回json格式数据
 			type:'GET',//HTTP请求类型
@@ -66,10 +60,10 @@ function getInterestVideoList(){
 			success:function(result){
 				//服务器返回响应，根据响应结果，分析是否登录成功；
 				if(result.code === 200){
-					data_interest.newVideoList = result.rows;
-					data_interest.totalPage = result.total;
-					data_interest.videoList = data_interest.videoList.concat(result.rows);
-					console.log(data_interest);
+					data_attention.newVideoList = result.rows;
+					data_attention.totalPage = result.total;
+					data_attention.videoList = data_attention.videoList.concat(result.rows);
+					console.log(data_attention);
 					resolve("success");
 				}else{
 					mui.toast('error！请联系ddpapa',{ duration:'long', type:'div' });
@@ -84,26 +78,26 @@ function getInterestVideoList(){
 		});
 	})
 	getVideoListPromise.then(function(){
-		for(var i = 0; i < data_interest.newVideoList.length; i++){
-			interestSwiper.appendSlide(
+		for(var i = 0; i < data_attention.newVideoList.length; i++){
+			attentionSwiper.appendSlide(
 						'<div class="swiper-slide" style="height:100%">'+
 							'<video class="swiper-video" loop="loop">'+
-								'<source src="http://192.168.1.6/'+data_interest.newVideoList[i].videoUrl+'" type="video/mp4"></source>'+
+								'<source src="http://192.168.1.6/'+data_attention.newVideoList[i].videoUrl+'" type="video/mp4"></source>'+
 								'Your browser does not support the video tag.'+
 							'</video>'+
 							'<div>'+
 								'<div class="myself-left-info">'+
 									'<div class="author-name">'+
-										'<b>@<span>'+data_interest.newVideoList[i].nickname+'</span></b>'+
+										'<b>@<span>'+data_attention.newVideoList[i].nickname+'</span></b>'+
 									'</div>'+
-									'<div class="video-desc">'+data_interest.newVideoList[i].description+'</div>'+
+									'<div class="video-desc">'+data_attention.newVideoList[i].description+'</div>'+
 									'<div class="video-bgm">'+
 										'<span class="iconfont iconyinle"></span>&nbsp;'+'呆呆papa的原声作品'+
 									'</div>'+
 								'</div>'+
 								'<div class="myself-right-btn">'+
 									'<div class="author-avatar">'+
-										'<img src="http://192.168.1.6/'+data_interest.newVideoList[i].uprofile+'" />'+
+										'<img src="http://192.168.1.6/'+data_attention.newVideoList[i].uprofile+'" />'+
 										'<div></div>'+
 									'</div>'+
 									'<div class="user-action">'+
@@ -123,9 +117,9 @@ function getInterestVideoList(){
 						'</div>'
 							);
 		};
-		data_interest.newVideoList = [];
-		console.log(data_interest.videoList)
-		if(data_interest.page === 1 && data_interest.videoList.length != 0){
+		data_attention.newVideoList = [];
+		console.log(data_attention.videoList)
+		if(data_attention.page === 1 && data_attention.videoList.length != 0){
 			// mui('video')[0].play();
 		}
 	});

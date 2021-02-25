@@ -1,0 +1,143 @@
+body{
+	background-color: #000000;
+	background-image: url(../../resource/images/20201216_12265798.png);
+	background-repeat: no-repeat;
+	background-size:cover;
+	margin: 0;
+}
+
+.content{
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	overflow: scroll;
+}
+
+.person-content{
+	margin-top: 20vh;
+	background-color: #000000;
+}
+
+.user-avatar{
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	width: 100vw;
+}
+
+.user-profile{
+	width: 6.25rem;
+	height: 6.25rem;
+	border-radius: 50%;
+	border: 0.125rem solid white;
+	margin-top: -5%;
+}
+
+.update-info{
+	width: 30vw;
+	height: 2.1875rem;
+	background-color: #3A3A44;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.sign-out{
+	width: 20vw;
+	height: 2.1875rem;
+	background-color: #3A3A44;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.user-info{
+	width: 96vw;
+	margin: auto;
+	margin-top: 3.125rem;
+	display: flex;
+	flex-direction: column;
+	color: white;
+}
+
+.user-name{
+	font-size: 1.25rem;
+	color: white
+}
+
+.user-ids{
+	line-height: 2.5rem;
+	color: white;
+}
+
+.user-desc{
+	width: 100%;
+	color: white;
+	overflow : hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+
+.mutipleInfo{
+	width: 50vw;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 1.875rem;
+	color: white;
+}
+
+.me-num{
+	font-weight: bold;
+}
+
+.me-sp{
+	color: #8A8B90;
+}
+
+.me-nav{
+	width: 100%;
+	margin-top: 3.125rem;
+	height: 44px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	color: #8A8B90;
+}
+
+.active-nav{
+	color: white;
+}
+
+.swiper-container{
+	width: 100vw;
+	height: calc(100vh - 44px);
+}
+
+.swiper-slide{
+	overflow: hidden;
+}
+
+/* 视频封面样式 */
+.video-cover{
+	width: 32.8%;
+	height: 20vh;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: 0.0625rem;
+	float: left;
+	color: white;
+	display: flex;
+	justify-content: start;
+	align-items: flex-end;
+	font-size: 0.625rem;
+}
+
+.video-cover div{
+	margin: 0.3125rem;
+	text-shadow: 0.0625rem 0.0625rem 0.3125rem rgba(46, 46, 46, 0.4);
+}

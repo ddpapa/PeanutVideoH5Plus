@@ -1,0 +1,24 @@
+#location{
+	height: calc(100vh - 44px);
+	width: 100vw;
+	margin-top: 44px;
+	overflow: scroll;
+}
+/* 视频封面样式 */
+.video-cover{
+	width: 49.3%;
+	height: 48vh;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: 0.0625rem;
+	float: left;
+	color: white;
+	display: flex;
+	justify-content: start;
+	align-items: flex-end;
+}
+
+.video-cover div{
+	margin: 0.3125rem;
+	text-shadow: 0.0625rem 0.0625rem 0.3125rem rgba(46, 46, 46, 0.4);
+}
